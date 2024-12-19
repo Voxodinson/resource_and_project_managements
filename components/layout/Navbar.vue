@@ -1,5 +1,5 @@
 <template>
-    <div class="flex items-center justify-between h-[5vh] bg-[#769FCD] border-b-[1px] border-white">
+    <div class="flex items-center justify-between h-[6vh] bg-[#3A6D8C] border-b-[1px] border-white">
         <img 
             src="../../assets/images/logo.png" 
             alt="logo"
@@ -14,12 +14,16 @@
                 variant="none"
                 placeholder="Search..."
                 :padded="false"
-                class="bg-gray-100 text-gray-700 rounded-l-md text-[.8rem] w-[400px] overflow-hidden py-1.5"/>
-            <UButton 
-                icon="solar:history-bold" 
+                class="bg-gray-50 text-black rounded-l-md text-[.8rem] w-[400px] overflow-hidden py-1.5"/>
+            <UButton
                 color="white"
-                class="px-3 p-1.5"
-                :padded="false" />
+                class="px-3 group"
+                :padded="false">
+                <UIcon
+                    name="solar:history-bold"
+                    class=" group-hover:scale-110 text-gray-500 hover:text-black transition text-[1.2rem]"/>
+            </UButton>
+            
         </UButtonGroup>
         <div class="flex h-full gap-3 py-3 items-center justify-center mr-4">
             <UTooltip 
@@ -32,7 +36,7 @@
                     label="New"
                     variant="soft" 
                     :padded="false"
-                    class=" hover:bg-gray-100 hover:text-black p-1 transition-all duration-300 ease-in-out"/>
+                    class=" hover:bg-gray-100 text-white hover:text-black p-1 transition"/>
             </UTooltip>
             <div class="h-full border-[1px] border-white"></div>
             <UTooltip 
@@ -44,7 +48,7 @@
                     color="white"
                     variant="soft" 
                     :padded="false"
-                    class=" hover:bg-gray-100 hover:text-black p-1 transition-all duration-300 ease-in-out"/>
+                    class="text-white hover:bg-gray-100 hover:text-black p-1 transition"/>
             </UTooltip>
             <UTooltip 
                 text="Create Reminder"
@@ -55,7 +59,7 @@
                     color="white"
                     variant="soft" 
                     :padded="false"
-                    class=" hover:bg-gray-100 hover:text-black p-1 transition-all duration-300 ease-in-out"/>
+                    class="text-white hover:bg-gray-100 hover:text-black p-1 transition"/>
             </UTooltip>
             <UTooltip 
                 text="Quick Action Menu"
@@ -66,21 +70,21 @@
                     color="white"
                     variant="soft" 
                     :padded="false"
-                    class=" hover:bg-gray-100 hover:text-black p-1 transition-all duration-300 ease-in-out"/>
+                    class="text-white hover:bg-gray-100 hover:text-black p-1 transition"/>
             </UTooltip>
             <UTooltip 
                 text="Teams New Noted"
                 :popper="{ offsetDistance: 12 }">
                 <UChip 
                     text="4"
-                    size="2xl">
+                    size="lg">
                     <UButton
                         icon="proicons:comment"
                         size="sm"
                         color="white"
                         variant="soft" 
                         :padded="false"
-                        class=" bg-gray-100 text-black p-1 transition-all duration-300 ease-in-out"/>
+                        class="text-black bg-gray-100 p-1 transition"/>
                 </UChip>
             </UTooltip>
             <User/>

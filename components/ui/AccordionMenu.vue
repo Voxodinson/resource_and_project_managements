@@ -9,12 +9,12 @@
             <UIcon
                 v-if="typeof(icon) === 'string'"
                 :name="icon"
-                class="text-2xl w-5 h-6"/>
+                class="text-2xl text-[1rem] text-black "/>
             <component
                 v-else
                 :is="icon"/>
             <span
-                class="font-medium text-[#0F58A8]"
+                class="font-medium text-black text-[.8rem]"
                 :class="classTitle">{{ title }}</span>
         </button>
         <UIcon 

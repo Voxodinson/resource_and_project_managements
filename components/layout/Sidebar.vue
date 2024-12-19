@@ -1,64 +1,84 @@
 <template>
     <div 
-        class=" bg-white transition-all h-[95vh] duration-200 ease-in-out "
+        class=" bg-white transition-all h-[94vh] duration-200 ease-in-out   border-r-[1px] border-gray-200"
         :class="{
             'w-[25%]': !expand,
-            'w-[5%]': expand
+            'w-[57px]': expand
         }">
         <div 
-            class="w-full h-[5vh] bg-black flex items-center justify-between relative"
+            class="w-full h-[5vh] flex items-center relative border-b-[1px] border-gray-200"
             :class="{
               'justify-between' : !expand,
               'justify-center' : expand
             }">
-            <UInput
-                icon="i-heroicons-magnifying-glass-20-solid"
-                size="sm"
-                color="white"
-                :trailing="false"
-                placeholder="Search..."
-                class="bg-none text-black rounded-md text-[.8rem] w-[70%] ml-2 overflow-hidden z-30"
+            <h3
                 :class="{
-                    'w-[300px] bg-gray-200 absolute left-[100%]' : expand,
-                    'block' : !expand
-                }"
-                v-if="!expand ? !search : search"/>
-            <UIcon 
-                class="w-5 h-5 opacity-60 hover:opacity-100 hover:text-white hover:scale-110 transition-all duration-200 ease-in-out"
-                :class="{
-                  'ml-2 block': expand,
-                  'hidden' : !expand
-                }"
-                @click="toggleSearch(!search)"
-                :name="!search ? 'i-heroicons-magnifying-glass-20-solid' : 'material-symbols-light:cancel-outline-rounded'"/>
+                    'hidden': expand,
+                    'block ml-2': !expand
+                }">Home</h3>
             <UIcon 
                 name="f7:sidebar-left"
-                class="w-5 h-5 opacity-60 hover:opacity-100 hover:text-white hover:scale-110 transition-all mr-2 duration-100 ease-in-out"
+                class="w-5 h-5 opacity-60 text-gray-700 hover:opacity-100 hover:text-black hover:scale-110 transition-all mr-2 duration-100 ease-in-out"
                 :class="{
-                  'mr-2': expand
+                  'ml-1.5': expand
                 }"
                 @click="toggleSidebar(!expand)"/>
         </div>
-        <div class="h-[calc(100vh-44vh)]">
+        <div class="h-[calc(100vh-44vh)] p-2">
             <Section
-                class=""
                 :class-title="!expand ? '' : 'hidden'"
-                label="Sale & Marketing"/>
-            <AccordionMenu
-                icon="oui:integration-general"
-                title="General Settings"
+                label="Main menu"/>
+            <Menu
+                icon="mage:dashboard-check"
+                title="Dashboard"
+                path="/"
+                class-name=""
+                :class-title="!expand ? '' : 'hidden'"/>
+            <Section
                 :class-title="!expand ? '' : 'hidden'"
-                :index="2"
-                :active-index="activeIndex"
-                @toggle-accordion="toggleAccordion">
-                <Menu
-                    icon="mingcute:exchange-dollar-line"
-                    title="Exchange Rate"
-                    path="/"
-                    class-name="pl-3"
-                    :class-title="!expand ? '' : 'hidden'"
-                    @set-title="showTitle"/>
-            </AccordionMenu>
+                label="Projects Management"/>
+            <Menu
+                icon="fluent:document-bullet-list-24-regular"
+                title="Projects"
+                path=""
+                class-name=""
+                :class-title="!expand ? '' : 'hidden'"/>
+            <Section
+                :class-title="!expand ? '' : 'hidden'"
+                label="Employees Management"/>
+            <Menu
+                icon="fluent:people-team-32-regular"
+                title="Employees"
+                path=""
+                class-name=""
+                :class-title="!expand ? '' : 'hidden'"/>
+            <Menu
+                icon="fluent:people-team-add-20-regular"
+                title="Recruitment"
+                path=""
+                class-name=""
+                :class-title="!expand ? '' : 'hidden'"/>
+            <Menu
+                icon="fluent:payment-32-regular"
+                title="Payroll"
+                path=""
+                class-name=""
+                :class-title="!expand ? '' : 'hidden'"/>
+            <Section
+                :class-title="!expand ? '' : 'hidden'"
+                label="Clients Management"/>
+            <Menu
+                icon="lineicons:hand-shake"
+                title="Clients"
+                path=""
+                class-name=""
+                :class-title="!expand ? '' : 'hidden'"/>
+            <Menu
+                icon="stash:people-group-duotone"
+                title="Client Type"
+                path=""
+                class-name=""
+                :class-title="!expand ? '' : 'hidden'"/>
         </div>
     </div>
 </template>

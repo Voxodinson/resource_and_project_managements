@@ -21,7 +21,7 @@ export const useAuthStore = defineStore('auth',{
     }: UserPayloadInterface)
     {
       const base_url: ImportMetaEnv = import.meta.env.VITE_BASE_URL;
-      const data: any = await $fetch(`${base_url}admin/v1/en/auth/login`,{
+      const data: any = await $fetch(`${base_url}admin/v1/web/auth/login`,{
         method: 'POST',
         headers: {
           Accept: 'application/json',

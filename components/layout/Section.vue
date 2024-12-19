@@ -1,8 +1,8 @@
 <template>
     <li
-        class="border-y border-solid border-gray-300 bg-gray-200 p-2 flex items-center justify-start min-h-[40px]">
+        class="py-1 block border-b-[1px] border-gray-300">
         <span
-            class="text-[#0F58A8] uppercase font-bold"
+            class="text-black text-[.9rem] capitalize"
             :class="{
                 [classTitle as string]: classTitle
             }">{{ label }}</span>

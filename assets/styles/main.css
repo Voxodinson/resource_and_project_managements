@@ -33,3 +33,7 @@
 {
   background: rgb(63, 63, 63) bbb;
 }
+
+.transition{
+  @apply transition-all duration-300 ease-in-out;
+}

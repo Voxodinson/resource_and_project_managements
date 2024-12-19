@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-between h-[5vh] px-4 bg-black">
+  <div class="flex items-center justify-between h-[5vh] px-4 bg-white border-b-[1px] border-gray-200">
       <UBreadcrumb 
           :links="linksItem"
           divider="/"/>
@@ -35,6 +35,10 @@
 </template>
 
 <script setup>
+
+definePageMeta({
+    colorMode: 'light'
+});
 
 const linksItem = [
   {

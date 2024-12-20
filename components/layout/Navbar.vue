@@ -1,10 +1,9 @@
 <template>
-    <div class="flex items-center justify-between h-[6vh] bg-[#3A6D8C] border-b-[1px] border-white">
+    <div class="flex items-center justify-between h-[50px] bg-[#3A6D8C] border-b-[1px] border-white">
         <img 
             src="../../assets/images/logo.png" 
             alt="logo"
             class="w-[50px] ml-28">
-
         <UButtonGroup size="md" orientation="horizontal">
             <UInput
                 icon="i-heroicons-magnifying-glass-20-solid"
@@ -15,15 +14,15 @@
                 placeholder="Search..."
                 :padded="false"
                 class="bg-gray-50 text-black rounded-l-md text-[.8rem] w-[400px] overflow-hidden py-1.5"/>
-            <UButton
-                color="white"
-                class="px-3 group"
-                :padded="false">
-                <UIcon
-                    name="solar:history-bold"
-                    class=" group-hover:scale-110 text-gray-500 hover:text-black transition text-[1.2rem]"/>
-            </UButton>
-            
+                <UButton
+                    color="white"
+                    class="px-3 group border-none outline-none bg-white"
+                    variant="soft"
+                    :padded="false">
+                    <UIcon
+                        name="solar:history-bold"
+                        class="group-hover:scale-110 text-gray-500 hover:text-black transition text-[1.2rem]"/>
+                </UButton>
         </UButtonGroup>
         <div class="flex h-full gap-3 py-3 items-center justify-center mr-4">
             <UTooltip 

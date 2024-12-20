@@ -1,8 +1,8 @@
 <template>
     <li
-        class="group py-2 pl-2 w-full text-sm transition  bg-opacity-20 hover:bg-[#3A6D8C] hover:bg-opacity-10 rounded-sm list-none mt-2"
+        class="group py-2 pl-2 w-full text-sm transition border-[1px] border-white bg-opacity-20 hover:bg-[#3A6D8C] hover:bg-opacity-10 rounded-sm list-none mt-2"
         :class="{
-            'bg-[#3A6D8C]  border-[1px] border-gray-300': route.path === path,
+            'bg-[#3A6D8C] border-gray-300': route.path === path,
             'bg-transparent': route.path !== path,
             [className as string]: className
         }">
@@ -14,7 +14,7 @@
                 :name="(icon as string)"
                 class="text-[1.2rem]"
                 :class="{
-                    'text-[#3A6D8C]': route.path === path,
+                    'text-[#2c5974]': route.path === path,
                     'text-gray-500': route.path !== path
                 }"/>
             <component
@@ -22,9 +22,9 @@
                 :is="icon"/>
             <span
                 :title="title"
-                class="text-[.9rem] text-black font-normal mt-0.5"
+                class="text-[.9rem] font-normal mt-0.5"
                 :class="{
-                    'text-[#3A6D8C]': route.path === path,
+                    'text-[#2c5974]': route.path === path,
                     'text-gray-500': route.path !== path,
                     [classTitle as string]: classTitle
                 }">{{ title }}</span>

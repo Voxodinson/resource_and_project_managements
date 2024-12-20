@@ -1,10 +1,10 @@
 
 <template>
     <div
-        class="flex flex-col w-full">
+        class="flex flex-col w-full h-[100vh] ">
         <Navbar/>
         <div
-            class="bg-[#DFEBF9] h-[100vh-6vh] w-full flex"
+            class="bg-[#DFEBF9] h-[100vh-40px] w-full flex"
             :class="{
                 'w-[calc(100%-25%)]': !expand,
                 'w-[calc(100%-5%)]': expand
@@ -12,7 +12,7 @@
             <Sidebar
                 @expand="toggleExpand"/>
             <div
-                class="overflow-hidden w-full h-[calc(100vh-6vh)] bg-gray-100">
+                class="overflow-auto h-[calc(100vh-50px)] w-full bg-gray-400">
                 <NuxtPage/>
             </div>
         </div>

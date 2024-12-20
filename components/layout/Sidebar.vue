@@ -1,12 +1,12 @@
 <template>
     <div 
-        class=" bg-white transition-all h-[94vh] duration-200 ease-in-out   border-r-[1px] border-gray-200"
+        class="  transition-all h-[calc(100vh-50px)] bg-white duration-200 ease-in-out border-r-[1px] border-gray-200"
         :class="{
             'w-[25%]': !expand,
             'w-[57px]': expand
         }">
         <div 
-            class="w-full h-[5vh] flex items-center relative border-b-[1px] border-gray-200"
+            class="w-full h-[45px] flex items-center relative border-b-[1px] border-gray-200"
             :class="{
               'justify-between' : !expand,
               'justify-center' : expand
@@ -24,7 +24,7 @@
                 }"
                 @click="toggleSidebar(!expand)"/>
         </div>
-        <div class="h-[calc(100vh-44vh)] p-2">
+        <div class="h-[calc(100vh-95px)] p-2">
             <Section
                 :class-title="!expand ? '' : 'hidden'"
                 label="Main menu"/>
@@ -40,7 +40,7 @@
             <Menu
                 icon="fluent:document-bullet-list-24-regular"
                 title="Projects"
-                path=""
+                path="/project"
                 class-name=""
                 :class-title="!expand ? '' : 'hidden'"/>
             <Section

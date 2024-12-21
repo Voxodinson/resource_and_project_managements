@@ -2,7 +2,12 @@
   <div class="flex items-center justify-between h-[45px] px-4 bg-white border-b-[1px] border-gray-200">
       <UBreadcrumb 
           :links="linksItem"
-          divider="/"/>
+          divider="/"
+            :ui="{
+                base: 'font-semibold text-[.8rem]',
+                inactive: 'hover:text-blue-200',
+                active: 'text-blue-400',
+            }"/>
       <div class=" flex gap-3 items-center justify-center h-full">
           <UTooltip 
               text="Manage Card Dashboard"
@@ -42,16 +47,10 @@ definePageMeta({
 
 const linksItem = [
   {
-      label: 'Home',
-      to: '/'
+      label: 'Main Menu'
   },
   {
-      label: 'Navigation',
-      to: '/'
-  }, 
-  {
-      label: 'Breadcrumb',
-      to: '/'
+      label: 'Dashboard',
   }
 ];
 </script>

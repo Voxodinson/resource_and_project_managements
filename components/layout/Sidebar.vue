@@ -24,9 +24,9 @@
                 }"
                 @click="toggleSidebar(!expand)"/>
         </div>
-        <div class="h-[calc(100vh-95px)] p-2">
+        <div class="h-[calc(100vh-95px)] p-2 overflow-auto">
             <Section
-                :class-title="!expand ? '' : 'hidden'"
+                :class-title="!expand ? 'border-b-[1px] border-gray-300' : 'hidden'"
                 label="Main menu"/>
             <Menu
                 icon="mage:dashboard-check"
@@ -35,7 +35,7 @@
                 class-name=""
                 :class-title="!expand ? '' : 'hidden'"/>
             <Section
-                :class-title="!expand ? '' : 'hidden'"
+                :class-title="!expand ? 'border-b-[1px] border-gray-300' : 'hidden'"
                 label="Projects Management"/>
             <Menu
                 icon="fluent:document-bullet-list-24-regular"
@@ -43,40 +43,72 @@
                 path="/project"
                 class-name=""
                 :class-title="!expand ? '' : 'hidden'"/>
+            <Menu
+                icon="fluent:text-bullet-list-checkmark-20-regular"
+                title="Projects Tracking"
+                path="/project_tracking"
+                class-name=""
+                :class-title="!expand ? '' : 'hidden'"/>
             <Section
-                :class-title="!expand ? '' : 'hidden'"
+                :class-title="!expand ? 'border-b-[1px] border-gray-300' : 'hidden'"
                 label="Employees Management"/>
             <Menu
                 icon="fluent:people-team-32-regular"
                 title="Employees"
-                path=""
+                path="/employees"
                 class-name=""
                 :class-title="!expand ? '' : 'hidden'"/>
             <Menu
                 icon="fluent:people-team-add-20-regular"
                 title="Recruitment"
-                path=""
+                path="/recuitment"
                 class-name=""
                 :class-title="!expand ? '' : 'hidden'"/>
             <Menu
                 icon="fluent:payment-32-regular"
                 title="Payroll"
-                path=""
+                path="/payroll"
                 class-name=""
                 :class-title="!expand ? '' : 'hidden'"/>
-            <Section
+            <AccordionMenu
+                title="General Setting"
+                :index="1"
+                :active-index="activeIndex"
                 :class-title="!expand ? '' : 'hidden'"
-                label="Clients Management"/>
+                @toggle-accordion="toggleAccordion">
+                <Menu
+                    icon="lineicons:hand-shake"
+                    title="Clients"
+                    path="/client"
+                    class-name=""
+                    :class-title="!expand ? '' : 'hidden'"/>
+                <Menu
+                    icon="stash:people-group-duotone"
+                    title="Client Type"
+                    path="/client_type"
+                    class-name=""
+                    :class-title="!expand ? '' : 'hidden'"/>
+            </AccordionMenu>
+            <AccordionMenu
+                title="User Management"
+                :index="2"
+                :active-index="activeIndex"
+                :class-title="!expand ? '' : 'hidden'"
+                @toggle-accordion="toggleAccordion">
+                <Menu
+                    icon="stash:people-group-duotone"
+                    title="Users"
+                    path="/users"
+                    class-name=""
+                    :class-title="!expand ? '' : 'hidden'"/>
+            </AccordionMenu>
+            <Section
+                :class-title="!expand ? 'border-b-[1px] border-gray-300' : 'hidden'"
+                label="Overview"/>
             <Menu
-                icon="lineicons:hand-shake"
-                title="Clients"
-                path=""
-                class-name=""
-                :class-title="!expand ? '' : 'hidden'"/>
-            <Menu
-                icon="stash:people-group-duotone"
-                title="Client Type"
-                path=""
+                icon="material-symbols:event-note-outline"
+                title="Teams Noted"
+                path="/teams_noted"
                 class-name=""
                 :class-title="!expand ? '' : 'hidden'"/>
         </div>

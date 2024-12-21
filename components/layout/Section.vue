@@ -1,11 +1,13 @@
 <template>
     <li
-        class="py-1 block border-b-[1px] border-gray-300">
+        class="py-1 block"
+        :class="classTitle">
         <span
-            class="text-black text-[.9rem] capitalize"
+            class="text-black text-[.9rem] capitalize border-none"
             :class="{
-                [classTitle as string]: classTitle
-            }">{{ label }}</span>
+                [classTitle as string]: classTitle}">
+            {{ label }}
+        </span>
     </li>
 </template>
 

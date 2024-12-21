@@ -2,32 +2,23 @@
     <li
         @click="toggleAccordion(index)"
         role="accordion"
-        class="bg-transparent py-2 w-11/12 flex items-center justify-between cursor-pointer group">
+        class="bg-transparent py-2 flex items-center justify-between cursor-pointer group border-b-[1px] border-gray-300">
         <button
-            class="bg-transparent flex gap-x-3 items-center text-[#248BFD] text-nowrap"
-            :class="classTitle ? 'ml-6' : 'ml-9'">
-            <UIcon
-                v-if="typeof(icon) === 'string'"
-                :name="icon"
-                class="text-2xl text-[1rem] text-black "/>
-            <component
-                v-else
-                :is="icon"/>
+            class="bg-transparent flex gap-x-3 items-center text-[#248BFD] text-nowrap">
             <span
-                class="font-medium text-black text-[.8rem]"
+                class="text-black text-[.9rem] capitalize"
                 :class="classTitle">{{ title }}</span>
         </button>
         <UIcon 
             name="line-md:chevron-right-circle-twotone"
-            class="w-5 h-5 text-gray-300 group-hover:text-gray-500 hover:scale-110 transition-all duration-200 ease-in-out"
+            class="w-5 h-5 text-gray-200 group-hover:text-gray-400 hover:scale-110 transition mr-2.5"
             :class="{
                 'rotate-90': activeIndex === index,
-                'hidden': classTitle
             }"/>
     </li>
     <ul
         role="list"
-        class="list-none flex flex-col gap-y-2 transition-all"
+        class="list-none flex flex-col"
         :class="{
             'hidden': activeIndex !== index
         }">
@@ -36,18 +27,13 @@
 </template>
 
 <script setup lang="ts">
-import type {
-    DefineComponent
-} from 'vue';
 
 withDefaults(defineProps<{
-    icon: string | DefineComponent<any, any, any>,
     title: string,
     index: number,
     activeIndex: number,
     classTitle: string
 }>(),{
-    icon: '',
     title: '',
     index: 0,
     activeIndex: -1,

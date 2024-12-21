@@ -37,7 +37,7 @@
     <div>
         THIS IS HOME PAGE
     </div>
-</template>
+  </template>
   
 <script setup>
   
@@ -47,10 +47,10 @@ definePageMeta({
   
 const linksItem = [
     {
-        label: 'Project Mangement'
+        label: 'Clients Mangement'
     },
     {
-        label: 'Project',
+        label: 'Clients'
     }
 ];
 </script>

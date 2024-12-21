@@ -37,7 +37,7 @@
     <div>
         THIS IS HOME PAGE
     </div>
-</template>
+  </template>
   
 <script setup>
   
@@ -50,7 +50,11 @@ const linksItem = [
         label: 'Project Mangement'
     },
     {
-        label: 'Project',
+        label: 'Projects',
+        to: '/project'
+    },
+    {
+        label: 'Projects Tracking',
     }
 ];
 </script>

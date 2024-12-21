@@ -12,7 +12,7 @@
             <Sidebar
                 @expand="toggleExpand"/>
             <div
-                class="overflow-auto h-[calc(100vh-50px)] w-full bg-gray-400">
+                class="overflow-auto h-[calc(100vh-50px)] w-full bg-gray-100">
                 <NuxtPage/>
             </div>
         </div>

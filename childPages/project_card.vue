@@ -27,6 +27,17 @@
                         :padded="false"
                         class=" text-gray-400 hover:text-gray-500 p-1 transition"/>
                 </UTooltip>
+                <UTooltip 
+                    text="Teams Noted"
+                    :popper="{ offsetDistance: 12 }">
+                    <UButton
+                        icon="material-symbols:event-note-outline"
+                        size="sm"
+                        color="white"
+                        variant="soft" 
+                        :padded="false"
+                        class="text-gray-500 hover:bg-gray-100 hover:text-black p-1 transition"/>
+                </UTooltip>
             </div>
             <UTooltip 
                 text="Create new task"
@@ -43,7 +54,7 @@
         <div class="flex gap-3 w-full justify-between p-2">
             <div class="w-full flex gap-3">
                 <div 
-                    class="w-[100px] h-[100px] flex rounded-full overflow-hidden shadow-sm border-[1px] border-gray-200 ">
+                    class="w-[120px] h-[120px] flex rounded-full overflow-hidden shadow-sm border-[1px] border-gray-200 ">
                     <img 
                         :src="(project.image as string)" 
                         alt="project logo"
@@ -83,31 +94,17 @@
                 </div>
             </div>
             <div class="w-fit flex flex-col justify-start items-end gap-3">
-                <div class="w-fit flex border-[1px] px-2 bg-blue-50 border-gray-200 p-1 rounded-md">
-                    <div class="w-fit flex gap-3 pr-3 items-center justify-center border-r-[1px] border-white">
+                <div class="w-fit flex items-center  gap-3 border-[1px] px-2 bg-blue-50 border-gray-200 p-1 rounded-md">
+                    <span
+                        class="text-[2rem] text-blue-400">
+                        900
+                    </span> 
+                    <span 
+                        class="text-[.6rem] text-gray-400 uppercase text-nowrap">
+                        days left<br>
                         <span
-                            class="text-[2rem] text-green-400">
-                            17
-                        </span> 
-                        <span 
-                            class="text-[.6rem] text-gray-400 uppercase text-nowrap">
-                            days left<br>
-                            <span
-                                class="block text-blue-400">In Design</span>
-                        </span>
-                    </div>
-                    <div class="w-fit flex gap-3 pl-3 items-center justify-center">
-                        <span
-                            class="text-[2rem] text-blue-400">
-                            90
-                        </span> 
-                        <span 
-                            class="text-[.6rem] text-gray-400 uppercase text-nowrap">
-                            days left<br>
-                            <span
-                                class="block text-blue-400">To Finished</span>
-                        </span>
-                    </div>
+                            class="block text-blue-400">To Finished</span>
+                    </span>
                 </div>
             </div>
         </div>
@@ -122,8 +119,9 @@
                     color="white" 
                     variant="soft" 
                     :class="[
-                        'bg-gray-100 border-b-[1px] border-white dark:border-white group flex items-center justify-between',
-                        index === items.length - 1 && 'border-none'
+                        ' border-b-[1px] border-white dark:border-white group flex items-center justify-between',
+                        index === items.length - 1 && 'border-none',
+                        open ? 'bg-blue-100' : 'bg-gray-100'
                     ]" 
                     :ui="{ 
                         rounded: 'rounded-none', 
@@ -142,7 +140,41 @@
                 </UButton>
             </template>
             <template #1>
-                client info
+                <div class="w-full px-2 gap-2 flex-wrap grid grid-cols-4">
+                    <div 
+                        class=" border-[1px] border-gray-200 rounded-md shadow-sm"
+                        v-for="(team, idx) in project.teams"
+                        :key="idx">
+                        <div class="w-full flex justify-end bg-gray-50">
+                            <UTooltip 
+                                text="Remove Team Member"
+                                :popper="{ offsetDistance: 12 }">
+                                <UIcon
+                                    name="material-symbols-light:close-small"
+                                    class="text-red-400 hover:text-red-500 text-[1.4rem] transition"/>
+                            </UTooltip>
+                        </div>
+                        <div class="flex p-2 gap-2">
+                            <div 
+                                class="w-[60px] h-[60px] flex rounded-full overflow-hidden shadow-sm border-[1px] border-gray-200 ">
+                                <img 
+                                    :src="(team.image as string)" 
+                                    alt="project logo"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="">
+                                <span
+                                    class="text-[.8rem] text-gray-400 uppercase">
+                                    {{ team.position }}
+                                </span>
+                                <h3
+                                    class="text-[1rem] text-gray-500 uppercase">
+                                    {{ (team.name) }}
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </template>
             <template #2>
                 client info
@@ -152,7 +184,6 @@
 </template>
 
 <script lang="ts" setup>
-import Team from '@/components/icons/team.vue';
 import type { 
     Items 
 } from '@/models/type';

@@ -34,13 +34,17 @@
             </UTooltip>
         </div>
     </div>
-    <div>
-        THIS IS HOME PAGE
+    <div
+        class="w-full flex flex-col gap-3 p-2">
+        <ProjectCard
+            :data="data.data"/>
     </div>
 </template>
   
 <script setup>
-  
+import { 
+    ProjectCard 
+} from '@/childPages';
 definePageMeta({
     colorMode: 'light'
 });
@@ -53,4 +57,127 @@ const linksItem = [
         label: 'Project',
     }
 ];
+
+const data = {
+    status: 'ok',
+    data: [
+        {
+            "id": 1,
+            "name": "Vox Odinson delivery web admin",
+            "image": "https://cdn.dribbble.com/userupload/16603678/file/original-3b8b3138ed4630ab64c0380ede6ea683.jpg?format=webp&resize=640x480&vertical=center",
+            "created_at": "2024-12-22T12:00:00Z",
+            "teams": ["Team Alpha", "Team Beta"],
+            "project_cost": 50000,
+            "deadline_time": "2024-12-31T23:59:59Z",
+            "status":"in design",
+            "start_work":"10-12-2024",
+            "deathline": "10-03-2025",
+            "client": {
+                "id": 101,
+                "name": "John Doe",
+                "phone": "+1234567890",
+                "address": "123 Main Street, Cityville",
+                "company_name": "ClientCorp",
+                "email": "john.doe@clientcorp.com"
+            },
+            "teams": [
+                {
+                    'name': 'vox odinson',
+                    'position':'Backend Developer',
+                    'image':'https://avatars.githubusercontent.com/u/904724?v=4'
+                },
+                {
+                    'name': 'vox odinson',
+                    'position':'Backend Developer',
+                    'image':'https://avatars.githubusercontent.com/u/904724?v=4'
+                },
+                {
+                    'name': 'vox odinson',
+                    'position':'Backend Developer',
+                    'image':'https://avatars.githubusercontent.com/u/904724?v=4'
+                },
+                {
+                    'name': 'vox odinson',
+                    'position':'Backend Developer',
+                    'image':'https://avatars.githubusercontent.com/u/904724?v=4'
+                },
+                {
+                    'name': 'vox odinson',
+                    'position':'Backend Developer',
+                    'image':'https://avatars.githubusercontent.com/u/904724?v=4'
+                },
+                {
+                    'name': 'vox odinson',
+                    'position':'Backend Developer',
+                    'image':'https://avatars.githubusercontent.com/u/904724?v=4'
+                },
+            ]
+        },
+        {
+            "id": 1,
+            "name": "Vox Odinson delivery web admin",
+            "image": "https://cdn.dribbble.com/userupload/16603678/file/original-3b8b3138ed4630ab64c0380ede6ea683.jpg?format=webp&resize=640x480&vertical=center",
+            "created_at": "2024-12-22T12:00:00Z",
+            "teams": ["Team Alpha", "Team Beta"],
+            "project_cost": 50000,
+            "deadline_time": "2024-12-31T23:59:59Z",
+            "status":"in design",
+            "start_work":"10-12-2024",
+            "deathline": "10-03-2025",
+            "client": {
+                "id": 101,
+                "name": "John Doe",
+                "phone": "+1234567890",
+                "address": "123 Main Street, Cityville",
+                "company_name": "ClientCorp",
+                "email": "john.doe@clientcorp.com"
+            }
+        },
+        {
+            "id": 1,
+            "name": "Vox Odinson delivery web admin",
+            "image": "https://cdn.dribbble.com/userupload/16603678/file/original-3b8b3138ed4630ab64c0380ede6ea683.jpg?format=webp&resize=640x480&vertical=center",
+            "created_at": "2024-12-22T12:00:00Z",
+            "teams": ["Team Alpha", "Team Beta"],
+            "project_cost": 50000,
+            "deadline_time": "2024-12-31T23:59:59Z",
+            "status":"in design",
+            "start_work":"10-12-2024",
+            "deathline": "10-03-2025",
+            "client": {
+                "id": 101,
+                "name": "John Doe",
+                "phone": "+1234567890",
+                "address": "123 Main Street, Cityville",
+                "company_name": "ClientCorp",
+                "email": "john.doe@clientcorp.com"
+            }
+        },
+        {
+            "id": 1,
+            "name": "Vox Odinson delivery web admin",
+            "image": "https://cdn.dribbble.com/userupload/16603678/file/original-3b8b3138ed4630ab64c0380ede6ea683.jpg?format=webp&resize=640x480&vertical=center",
+            "created_at": "2024-12-22T12:00:00Z",
+            "teams": ["Team Alpha", "Team Beta"],
+            "project_cost": 50000,
+            "deadline_time": "2024-12-31T23:59:59Z",
+            "status":"in design",
+            "start_work":"10-12-2024",
+            "deathline": "10-03-2025",
+            "client": {
+                "id": 101,
+                "name": "John Doe",
+                "phone": "+1234567890",
+                "address": "123 Main Street, Cityville",
+                "company_name": "ClientCorp",
+                "email": "john.doe@clientcorp.com"
+            }
+        }
+    ],
+    page_no: 1,
+    per_page: 10,
+    total: 10,
+    total_page: 10
+};
+
 </script>

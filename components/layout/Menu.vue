@@ -1,6 +1,6 @@
 <template>
     <li
-        class="group py-2 pl-2 w-full text-sm transition border-[1px] border-white bg-opacity-20 hover:bg-[#3A6D8C] hover:bg-opacity-10 rounded-sm list-none mt-2"
+        class="group py-2 pl-2 w-full text-sm transition border-[1px] border-white bg-opacity-10 hover:bg-[#3A6D8C] hover:bg-opacity-10 rounded-sm list-none mt-2"
         :class="{
             'bg-[#3A6D8C] border-gray-300': route.path === path,
             'bg-transparent': route.path !== path,

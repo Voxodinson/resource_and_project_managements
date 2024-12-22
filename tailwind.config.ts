@@ -7,7 +7,7 @@ module.exports = {
     "./section/**/*.{vue,ts,js}",
     "./layouts/**/*.vue",
     "./pages/**/*.vue",
-    "./childTable/**/*.vue",
+    "./childPages/**/*.vue",
     "./sections/**/*.vue",
     "./modal/**/*.vue",
     "./plugins/**/*.{js,ts}",

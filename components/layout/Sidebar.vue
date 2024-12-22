@@ -71,7 +71,7 @@
                 class-name=""
                 :class-title="!expand ? '' : 'hidden'"/>
             <AccordionMenu
-                title="General Setting"
+                title="Clients Mangement"
                 :index="1"
                 :active-index="activeIndex"
                 :class-title="!expand ? '' : 'hidden'"

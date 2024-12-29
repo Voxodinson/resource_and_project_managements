@@ -34,13 +34,17 @@
             </UTooltip>
         </div>
     </div>
-    <div>
-        THIS IS HOME PAGE
+    <div
+        class="w-full grid grid-cols-3 gap-3 p-3">
+        <EmployeeCard
+            :data="[]"/>
     </div>
   </template>
   
 <script setup>
-  
+import { 
+    EmployeeCard 
+} from '@/childPages';
 definePageMeta({
     colorMode: 'light'
 });
@@ -53,4 +57,13 @@ const linksItem = [
         label: 'Employees'
     }
 ];
+const data = {
+    status: 'ok',
+    data: [],
+    page_no: 1,
+    per_page: 10,
+    total: 10,
+    total_page: 10
+};
+
 </script>
